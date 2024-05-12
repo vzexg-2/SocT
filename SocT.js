@@ -3,7 +3,6 @@ const https = require('https');
 const net = require('net');
 const readline = require('readline');
 
-// By @Sunshine / vzexg-2 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
