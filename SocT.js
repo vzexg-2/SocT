@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 });
 
 console.log("[?] put (https://) or (http://) first.");
-consone.log("");
+console.log("");
 rl.question('.!URL > ', (url) => {
     const targetUrl = url;
     const socketConnections = 600;
