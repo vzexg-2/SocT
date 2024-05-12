@@ -45,7 +45,7 @@ rl.question('.!URL > ', (url) => {
     }
 
     function attack(protocol) {
-        console.log("SocT v1.0 By vzexg-2/Sunshine <sunshinexjuhari@protonmail.com>");
+        console.log("SocT v1.0 By vzexg-2 <sunshinej1x@omail.edu.pl>");
         console.log("");
         const transport = protocol === 'https' ? https : http;
         const startTime = Date.now();
