@@ -22,6 +22,7 @@ rl.question('.!URL > ', (url) => {
         'Safari',
         'Opera',
         'Edge',
+        'Falkon',
     ];
 
     const operatingSystems = [
