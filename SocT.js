@@ -80,6 +80,8 @@ rl.question('.!URL > ', async (url) => {
         await page.goto(targetUrl, { waitUntil: 'networkidle2' });
         await bypassCloudflare(page);
 
+        console.log("SocT v1.2 by vzexg-2 <sunshinej1x@omail.edu.pl>");
+        console.log("");
         const timerId = setInterval(() => {
             if (Date.now() < endTime) {
                 for (let i = 0; i < threads; i++) {
