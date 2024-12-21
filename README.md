@@ -1,4 +1,7 @@
 # SocT
-SocT is only for testing a website to handle a simple DoS Attack.
+SocT is a ddos tool that can pierce through layer7, current version can only send max of 7-11K per request, next version will be more than that ( Relying on how fast your internet connection and your device )
 
-With Cloudflare Bypass function, only for testing, do not use it for attacking random website.
+SocT included with Cloudflare Bypass function.
+
+made by: sxc_qq1 | vzexg-2
+discord: https://discord.gg/JD9K97MJKx
