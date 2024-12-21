@@ -3,5 +3,7 @@ SocT is a ddos tool that can pierce through layer7, current version can only sen
 
 SocT included with Cloudflare Bypass function.
 
-made by: sxc_qq1 | vzexg-2
-discord: https://discord.gg/JD9K97MJKx
+```
+- made by: sxc_qq1 | vzexg-2
+- discord: https://discord.gg/JD9K97MJKx
+```
