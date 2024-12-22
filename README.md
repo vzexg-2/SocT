@@ -1,5 +1,5 @@
 # SocT
-SocT is a ddos tool that can pierce through layer7 ( Relying on how fast your internet connection and your device )
+SocT is a ddos tool that can pierce through layer7, included with hundreds of thousands of user agents ( Relying on how fast your internet connection and your device )
 
 SocT included with Cloudflare Bypass function.
 
